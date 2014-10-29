@@ -1,0 +1,4 @@
+services:
+#    f_kak_sila_main.example:
+#        class: FKakSila\Bundle\MainBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
