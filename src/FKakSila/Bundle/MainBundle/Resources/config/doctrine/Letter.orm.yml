@@ -12,6 +12,9 @@ FKakSila\Bundle\MainBundle\Entity\Letter:
         name:
             type: string
             length: '255'
+        transcription:
+            type: string
+            length: '5'
         description:
             type: text
             length: null

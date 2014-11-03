@@ -81,32 +81,4 @@ class Letter
         return $this->description;
     }
 
-    /**
-     * @var string
-     */
-    private $transcription;
-
-
-    /**
-     * Set transcription
-     *
-     * @param string $transcription
-     * @return Letter
-     */
-    public function setTranscription($transcription)
-    {
-        $this->transcription = $transcription;
-
-        return $this;
-    }
-
-    /**
-     * Get transcription
-     *
-     * @return string 
-     */
-    public function getTranscription()
-    {
-        return $this->transcription;
-    }
 }

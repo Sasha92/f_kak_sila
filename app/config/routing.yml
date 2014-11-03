@@ -1,4 +1,4 @@
 f_kak_sila_main:
     resource: "@FKakSilaMainBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix: /
 
