@@ -1,4 +1,4 @@
 f_kak_sila_main_homepage:
-    pattern:  /hello/{name}
+    pattern:  /home/
     defaults: { _controller: FKakSilaMainBundle:Default:index }
 

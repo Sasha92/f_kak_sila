@@ -3,5 +3,7 @@
     Эф как сила
 {% endblock %}
 {% block body %}
-    Hello {{ name }}
+    {{ form_start(form) }}
+      {{ form_row(form.name) }}
+    {{ form_end(form) }}
 {% endblock %}
