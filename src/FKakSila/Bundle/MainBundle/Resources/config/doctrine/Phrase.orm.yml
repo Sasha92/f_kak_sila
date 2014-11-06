@@ -1,0 +1,14 @@
+FKakSila\Bundle\MainBundle\Entity\Phrase:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        text:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

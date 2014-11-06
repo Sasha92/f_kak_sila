@@ -1,0 +1,7 @@
+FKakSila\Bundle\MainBundle\Entity\Phrase:
+    properties:
+      text:
+        - Length:
+            min: 1
+            max: 255
+        - Regex: '/^[a-zA-Z]+$/'

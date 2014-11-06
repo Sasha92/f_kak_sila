@@ -24,6 +24,11 @@ class Letter
      */
     private $description;
 
+    /**
+     * @var string
+     */
+    private $transcription;
+
 
     /**
      * Get id
@@ -80,12 +85,6 @@ class Letter
     {
         return $this->description;
     }
-
-    /**
-     * @var string
-     */
-    private $transcription;
-
 
     /**
      * Set transcription

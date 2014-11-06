@@ -22,8 +22,8 @@ class LoadLetter implements FixtureInterface
             $letter->setDescription(trim($data[2]));
 
             $manager->persist($letter);
-            $manager->flush();
         }
+        $manager->flush();
         fclose($openFile);
     }
 } 
