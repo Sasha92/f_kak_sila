@@ -29,7 +29,9 @@ class Letter
      */
     private $transcription;
 
-
+    public function __toString(){
+        return sprintf('%s %s %s',  $this->transcription, 'как',  $this->description);
+    }
     /**
      * Get id
      *

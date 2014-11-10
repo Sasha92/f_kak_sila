@@ -4,4 +4,22 @@
 {% endblock %}
 {% block body %}
     {{ form(form) }}
+    {% if  letters is defined %}
+        <div>
+            <h3>Фраза:</h3>
+            <table>
+                <tr>
+            {% for letter in letters %}
+                <td>{{ letter }}</td>
+            {% endfor %}
+                </tr>
+            </table>
+        </div>
+        <div>
+            <h3>Перевод:</h3>
+            {% for res in result %}
+                <span>{{ res }}</span>
+            {% endfor %}
+        </div>
+    {% endif %}
 {% endblock %}

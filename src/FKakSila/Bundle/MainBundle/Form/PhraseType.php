@@ -15,11 +15,20 @@ class PhraseType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('text', 'text',array('label'=>false))
+            ->add('text', 'text', array('label' => false))
+            ->add('language', 'choice', array(
+                'choices' => array(
+                    'ru' => 'Russian',
+                    'ua' => 'Ukrainian'
+                ),
+                'data'=>'rus',
+                'multiple' => false,
+                'expanded' => true,
+                'required' => true))
             ->add('Перевести', 'submit')
             ->setMethod('GET');
     }
-    
+
     /**
      * @param OptionsResolverInterface $resolver
      */
@@ -27,7 +36,7 @@ class PhraseType extends AbstractType
     {
         $resolver->setDefaults(array(
             'data_class' => 'FKakSila\Bundle\MainBundle\Entity\Phrase',
-            'csrf_protection'=>false
+            'csrf_protection' => false
         ));
     }
 

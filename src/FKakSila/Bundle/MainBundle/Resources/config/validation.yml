@@ -4,4 +4,4 @@ FKakSila\Bundle\MainBundle\Entity\Phrase:
         - Length:
             min: 1
             max: 255
-        - Regex: '/^[a-zA-Z]+$/'
+        - Regex: '/^[a-zA-Z\s]+$/'
