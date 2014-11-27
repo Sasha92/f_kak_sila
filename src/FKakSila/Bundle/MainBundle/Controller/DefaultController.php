@@ -6,15 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use FKakSila\Bundle\MainBundle\Form\PhraseType;
 use FKakSila\Bundle\MainBundle\Entity\Phrase;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Translation\Translator;
 
 class DefaultController extends Controller
 {
-    public function indexAction(Request $request)
+    public function translateAction(Request $request)
     {
         $phrase = new Phrase();
-        $action = array('action' => $this->generateUrl('f_kak_sila_main_homepage', array('text' => 10)));
+        $action = array('action' => $this->generateUrl('translate', array('text' => 10)));
         $form = $this->createForm(new PhraseType(), $phrase, $action);
 
         $form->handleRequest($request);
@@ -22,28 +20,7 @@ class DefaultController extends Controller
         if ($form->isValid()) {
 
             $text = $form['text']->getData();
-            $language = $form['language']->getData();
-            /*$length = strlen($text);
-            $letters = str_split($text);
-
-            $em = $this->get('doctrine.orm.entity_manager');
-            $repo = $em->getRepository('FKakSilaMainBundle:Letter');
-            $result = [];
-            for ($i = 0; $i < $length; $i++) {
-                $letter = $repo->findOneBy(['name' => $phrase->getText()[$i]]);
-                if (empty($letter->getTranscription()) and  $i!= $length - 1) {
-                    $data = sprintf('%s', $letter->getdescription() . ',');
-                } else {
-                    $data = sprintf('%s %s %s', $letter->getTranscription(), 'как', $letter->getdescription() . ',');
-                }
-                if ($i == $length - 1) {
-                    $data = sprintf('%s %s %s', $letter->getTranscription(), 'как', $letter->getdescription());
-                }
-                array_push($result, $data);
-            }*/
-            //return new Response(var_dump($phrase));
-            //return $this->render('FKakSilaMainBundle:Default:index.html.twig', array('form' => $form->createView(), 'letters' => $letters, 'result' => $result));
-            return $this->redirect($this->generateUrl('f_kak_sila_main_homepage', array('text' => $text, 'language'=>$language)));
+            return $this->redirect($this->generateUrl('translate', array('text' => $text)));
 
         }
 
@@ -52,9 +29,6 @@ class DefaultController extends Controller
 
             $length = strlen($text);
             $letters = str_split($text);
-
-            $language = $request->query->get('language');
-            $translator = new Translator($language);
 
             $phrase = new Phrase();
             $phrase->setText($text);
@@ -66,12 +40,12 @@ class DefaultController extends Controller
                 if (empty($letter->getTranscription()) and $i != $length - 1) {
                     $data = sprintf('%s', $letter->getdescription() . ',');
                 } else {
-                    $data = sprintf('%s %s %s', $letter->getTranscription(), 'как', $letter->getdescription() . ',');
+                    $data = sprintf('[%s] %s %s', $letter->getTranscription(), ' - как', $letter->getdescription() . ',');
                 }
                 if ($i == $length - 1) {
-                    $data = sprintf('%s %s %s', $letter->getTranscription(), 'как', $letter->getdescription());
+                    $data = sprintf('[%s] %s %s', $letter->getTranscription(), ' - как', $letter->getdescription());
                 }
-                array_push($result, $translator->trans($data));
+                array_push($result, $data);
             }
 
             return $this->render('FKakSilaMainBundle:Default:index.html.twig', array('form' => $form->createView(), 'letters' => $letters, 'result' => $result));

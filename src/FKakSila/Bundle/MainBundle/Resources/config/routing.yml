@@ -1,4 +1,4 @@
-f_kak_sila_main_homepage:
-    pattern:  /home/
-    defaults: { _controller: FKakSilaMainBundle:Default:index }
+translate:
+    pattern:  /
+    defaults: { _controller: FKakSilaMainBundle:Default:translate }
 

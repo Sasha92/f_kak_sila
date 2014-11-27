@@ -3,23 +3,53 @@
     Эф как сила
 {% endblock %}
 {% block body %}
-    {{ form(form) }}
-    {% if  letters is defined %}
-        <div>
-            <h3>Фраза:</h3>
-            <table>
-                <tr>
-            {% for letter in letters %}
-                <td>{{ letter }}</td>
-            {% endfor %}
-                </tr>
-            </table>
+    <div class="header">
+        <div class = "text">
+            <h1 id="header-h1">[Эф] - как сила</h1>
+            <blockquote class="quote">
+                <p>"Сила правит миром, а не мысль, но мысль пользуется силой." </p>
+                <small class="quote-small">Блез Паскаль</small>
+            </blockquote>
         </div>
-        <div>
-            <h3>Перевод:</h3>
-            {% for res in result %}
-                <span>{{ res }}</span>
-            {% endfor %}
+    </div>
+
+    <div class="teacher">    </div>
+
+    <div class="rigth-block">
+        <div class="speech">
+            <h2 >Хотите перевести слово? </h2>
+            <h2 >Просто, введите его!</h2>
         </div>
-    {% endif %}
+
+        {{ form_start(form, {'attr': {'class': 'form-inline form-styles'}}) }}
+        {{ form_errors(form) }}
+
+        <div class="input-group">
+            {{ form_label(form.text) }}
+            {{ form_errors(form.text) }}
+            {{ form_widget(form.text) }}
+        </div>
+
+        <button type="submit" class="btn " >Перевести</button>
+        {{ form_end(form) }}
+
+        {% if  letters is defined %}
+            <div>
+                <h3 class="name-answer">Фраза:</h3>
+                <table class="table table-nonfluid table-border">
+                    <tr>
+                {% for letter in letters %}
+                    <td>{{ letter }}</td>
+                {% endfor %}
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <h3 class="name-answer">Перевод:</h3>
+                {% for res in result %}
+                    <span class="answer">{{ res }}</span>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
 {% endblock %}

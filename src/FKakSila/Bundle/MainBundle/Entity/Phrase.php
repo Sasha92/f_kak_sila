@@ -19,10 +19,6 @@ class Phrase
      */
     private $text;
 
-    /**
-     * @var string
-     */
-    private $language;
 
 
     /**
@@ -56,28 +52,5 @@ class Phrase
     public function getText()
     {
         return $this->text;
-    }
-
-    /**
-     * Set language
-     *
-     * @param string $language
-     * @return Phrase
-     */
-    public function setLanguage($language)
-    {
-        $this->language = $language;
-
-        return $this;
-    }
-
-    /**
-     * Get language
-     *
-     * @return string 
-     */
-    public function getLanguage()
-    {
-        return $this->language;
     }
 }

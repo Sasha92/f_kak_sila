@@ -16,16 +16,6 @@ class PhraseType extends AbstractType
     {
         $builder
             ->add('text', 'text', array('label' => false))
-            ->add('language', 'choice', array(
-                'choices' => array(
-                    'ru' => 'Russian',
-                    'ua' => 'Ukrainian'
-                ),
-                'data'=>'rus',
-                'multiple' => false,
-                'expanded' => true,
-                'required' => true))
-            ->add('Перевести', 'submit')
             ->setMethod('GET');
     }
 
