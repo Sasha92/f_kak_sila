@@ -53,4 +53,5 @@ class Phrase
     {
         return $this->text;
     }
+
 }

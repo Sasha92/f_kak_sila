@@ -11,7 +11,4 @@ FKakSila\Bundle\MainBundle\Entity\Phrase:
         text:
             type: string
             length: 255
-        language:
-            type: string
-            length: '10'
     lifecycleCallbacks: {  }

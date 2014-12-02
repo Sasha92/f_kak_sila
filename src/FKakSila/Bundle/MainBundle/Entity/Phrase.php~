@@ -20,6 +20,7 @@ class Phrase
     private $text;
 
 
+
     /**
      * Get id
      *
@@ -52,4 +53,5 @@ class Phrase
     {
         return $this->text;
     }
+
 }

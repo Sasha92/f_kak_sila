@@ -1,16 +1,18 @@
-@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css');
-
 .answer {
     color: #000066;
     font-size:  20px;
     font-family: Verdana, Arial, Helvetica;
     font-weight: 600;
 }
+.answer-hover {
+    background-color: #FF6600;
+    cursor: pointer;
+}
 .container {
     text-align: center;
     padding-left: 0px;
-    margin-top: -20px;
     background-color: #0099CC;
+    width: 1170px !important;
 }
 .btn {
     background-color:#CCCCFF;
@@ -19,6 +21,9 @@
     padding: 10px;
     font-size: 25px;
     font-weight: 600;
+}
+.btn:hover {
+    color:#FF6600;
 }
 .form-styles {
     margin: 5%;

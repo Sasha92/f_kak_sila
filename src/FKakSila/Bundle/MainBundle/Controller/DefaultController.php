@@ -37,14 +37,20 @@ class DefaultController extends Controller
             $result = [];
             for ($i = 0; $i < $length; $i++) {
                 $letter = $repo->findOneBy(['name' => $phrase->getText()[$i]]);
-                if (empty($letter->getTranscription()) and $i != $length - 1) {
-                    $data = sprintf('%s', $letter->getdescription() . ',');
+                if ($i != $length - 1) {
+                    if (empty($letter->getTranscription())) {
+                        $data = sprintf('%s', $letter->getdescription() . ',');
+                    } else {
+                        $data = sprintf('[%s] %s %s', $letter->getTranscription(), ' - как', $letter->getdescription() . ',');
+                    }
                 } else {
-                    $data = sprintf('[%s] %s %s', $letter->getTranscription(), ' - как', $letter->getdescription() . ',');
+                    if (empty($letter->getTranscription())) {
+                        $data = sprintf('%s', $letter->getdescription());
+                    } else {
+                        $data = sprintf('[%s] %s %s', $letter->getTranscription(), ' - как', $letter->getdescription());
+                    }
                 }
-                if ($i == $length - 1) {
-                    $data = sprintf('[%s] %s %s', $letter->getTranscription(), ' - как', $letter->getdescription());
-                }
+
                 array_push($result, $data);
             }
 
