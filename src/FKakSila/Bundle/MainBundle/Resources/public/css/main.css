@@ -1,114 +1,217 @@
+body {
+    background: url('../images/bg.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: HelveticaNeueCyr;
+    font-size: 18px;
+}
+.about {
+    line-height: 1.5;
+    font-size: 100%;
+}
 .answer {
-    color: #000066;
-    font-size:  20px;
-    font-family: Verdana, Arial, Helvetica;
-    font-weight: 600;
+    color: #006600;
+    font-size: 100%;
 }
 .answer-hover {
-    background-color: #FF6600;
+    background-color: #FF9900;
     cursor: pointer;
 }
-.container {
-    text-align: center;
-    padding-left: 0px;
-    background-color: #0099CC;
-    width: 1170px !important;
-}
 .btn {
-    background-color:#CCCCFF;
-    border: 5px solid #000066;
-    color: #000066;
+    background-color:#CCFFCC;
+    border: 5px solid #3e7b02;
+    color: #006600;
     padding: 10px;
-    font-size: 25px;
+    font-size: 145%;
     font-weight: 600;
 }
 .btn:hover {
-    color:#FF6600;
+    color: #00CC33;
+}
+.container {
+    width: auto;
+}
+.footer {
+    color: #fff;
+    font-size: 100%;
+    text-align: center;
+    padding-top: 50px;
 }
 .form-styles {
-    margin: 5%;
+    clear: both;
+    text-align: center;
 }
 .header {
-    background-image: url('../images/header.jpg');
-    width: 1170px;
-    height: 200px;
-}
-#header-h1 {
+    width: 55%;
+    padding-left: 18%;
     color: #fff;
-    text-align: left;
-    font-size:  50px;
-    font-family: Verdana, Arial, Helvetica;
     font-style: italic;
-    padding-left: 30px;
-
+    font-weight: 600;
+}
+.header-h1 {
+    font-size: 267%;
+    font-weight: 600;
 }
 input {
-    background-color:#CCCCFF;
-    border: 5px solid #000066;
-    color: #000066;
+    background-color: #CCFFCC;
+    border: 5px solid #3e7b02;
     padding: 10px;
-    font-size: 25px;
+    font-size: 139%;
     font-weight: 600;
 }
 input:focus {
-    border: 5px solid #FF6600;
+    border: 5px solid #FF9900;
 }
 .input-group {
-    padding: 10px;
+    padding: 15px;
+}
+.main-block {
+    width: 65%;
+    background-color: #fff;
+    border: 8px solid #3e7b02;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    margin: 0 auto;
+    overflow: auto;
 }
 .name-answer {
-    color:#fff;
-    font-size: 30px;
-    font-family: Verdana, Arial, Helvetica;
-    font-style: italic;
-    text-decoration: underline;
+    font-size: 167%;
+    font-family:Arial;
+    text-transform: uppercase;
+    text-align: center;
+}
+.newton {
+    float: left;
+    background-image: url('../images/newton.png');
+    background-repeat:  no-repeat;
+    width: 300px;
+    height: 300px;
+}
+.quote {
+    font-size: 100%;
+    border: none;
+    padding: 15px 0 15px 0;
+}
+.quote-small {
+    color: #fff;
+    font-size: 134%;
+    padding-left: 45%;
+}
+.table-nonfluid {
+    width: auto;
+    border: 5px solid #3e7b02;
+    background-color:#CCFFCC;
+    color:#006600;
+    font-weight: 600;
+    margin: auto;
 
+}
+.table-border td {
+    border: 2px solid #3e7b02;
+}
+.teacher {
+    background-image: url('../images/teacher.png');
+    width: 150px;
+    height: 150px;
+    float: left;
+    margin: 0 10px 20px 50px;
 }
 .right-block {
     float: right;
-    width: 765px;
+    width: 60%;
 }
-.quote {
-    color: #fff;
-    font-size: 18px;
-    padding: 0px;
-    text-align: left;
-    width: 400px;
-    margin-left: 35px;
+.right-block-h1 {
+    font-family: Arial;
+    font-size: 278%;
     text-align: center;
-}
-.quote-small {
-    color :#fff;
-}
-.speech {
-    background-image: url('../images/speech.png');
-    width: 500px;
-    height: 150px;
-    float: left;
-    color:#fff;
-    font-size: 30px;
-    font-family: Verdana, Arial, Helvetica;
-    padding-top: 10px;
+    text-transform: uppercase;
 }
 
-.table-nonfluid {
-    width: auto;
-    border: 5px solid #000066;
-    background-color:#CCCCFF;
-    color: #000066;
-    font-size: 20px;
-    font-weight: 600;
-    margin: auto;
+@media screen and (min-width:480px) and (max-width:1200px) {
+    body {
+        font-size: 15px;
+    }
+    .btn {
+        font-size: 100%;
+        padding: 5px;
+    }
+    .header {
+        width: 80%;
+    }
+    .header-h1 {
+        font-size: 170%;
+    }
+    input {
+        font-size: 100%;
+        padding: 5px;
+    }
+    .newton {
+        float: none;
+        margin: 0 auto;
+
+    }
+    .quote-small {
+        font-size: 120%;
+    }
+    .right-block {
+        float: none;
+        width: 95%;
+        text-align: center;
+    }
+    .right-block-h1 {
+        font-size: 190%;
+    }
+    .teacher {
+        margin: 0 10px 0 10px;
+    }
+
 }
-.table-border td {
-    border: 2px solid #000066;
-}
-.teacher {
-    background-image: url('../images/teacher1.png');
-    width: 405px;
-    height: 500px;
-    float: left;
-}
-.text {
-    padding: 20px;
+
+@media screen and (max-width:479px) {
+    a
+    body {
+        font-size: 12px;
+    }
+    .btn {
+        font-size: 80%;
+        padding: 5px;
+    }
+
+    .header {
+        width: 80%;
+    }
+    .header-h1 {
+        font-size: 150%;
+    }
+    input {
+        font-size: 60%;
+        padding: 5px;
+    }
+
+    .newton {
+        float: none;
+        margin: 0 auto;
+        background-image: url('../images/newton2.gif');
+        background-repeat:  no-repeat;
+        width: 150px;
+        height: 150px;
+
+    }
+    .quote-small {
+        font-size: 120%;
+    }
+    .right-block {
+        float: none;
+        width: 90%;
+        text-align: center;
+    }
+    .right-block-h1 {
+        font-size: 180%;
+    }
+    .teacher {
+        display: none;
+    }
 }

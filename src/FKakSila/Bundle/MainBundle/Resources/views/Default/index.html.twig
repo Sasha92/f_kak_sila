@@ -4,58 +4,76 @@
 {% endblock %}
 {% block body %}
     <div class="header">
-        <div class = "text">
-            <h1 id="header-h1">[Эф] - как сила</h1>
+            <h1 class="header-h1">[Эф] - как сила</h1>
             <blockquote class="quote">
                 <p>"Сила правит миром, а не мысль, но мысль пользуется силой." </p>
                 <small class="quote-small">Блез Паскаль</small>
             </blockquote>
-        </div>
     </div>
 
-    <div class="teacher">    </div>
+    <div class=" main-block">
+        {% if  letters is  not defined %}
+            <div class="newton">   </div>
 
-    <div class="rigth-block">
-        <div class="speech">
-            <h2 >Хотите перевести слово? </h2>
-            <h2 >Просто, введите его!</h2>
-        </div>
-
-        {{ form_start(form, {'attr': {'class': 'form-inline form-styles'}}) }}
-        {{ form_errors(form) }}
-
-        <div class="input-group">
-            {{ form_label(form.text) }}
-            {{ form_errors(form.text) }}
-            {{ form_widget(form.text) }}
-        </div>
-
-        <button type="submit" class="btn " >Перевести</button>
-        {{ form_end(form) }}
-
-        {% if  letters is defined %}
-            <div>
-                <h3 class="name-answer">Фраза:</h3>
-                <table class="table table-nonfluid table-border">
-                    <tr>
-                        {% set n = 0 %}
-                {% for letter in letters %}
-                    {% set n = n + 1  %}
-                    <td id="answer-{{ n  }}">{{ letter }}</td>
-                {% endfor %}
-                    </tr>
-                </table>
-            </div>
-            <div>
-                <h3 class="name-answer">Перевод:</h3>
-                {% set n = 0 %}
-                <div class = 'answer'>
-                    {% for res in result %}
-                        {% set n = n + 1  %}
-                        <span  id="answer-{{ n }}">{{ res }}</span>
-                    {% endfor %}
+            <div class="right-block">
+                <h1 class="right-block-h1">Здравствуй!</h1>
+                <div class ="about">
+                    <p>Этот сайт  придуман  для  физиков!
+                      Он поможет тебе продиктовать друзьям адрес твоей странички, электронную почту
+                        и разные другие адреса в интернете!</p>
+                    <p>Просто введи адрес в поле внизу и нажми на кнопку «перевод»!</p>
                 </div>
-            </div>
+             </div>
         {% endif %}
-    </div>
+
+
+
+            {{ form_start(form, {'attr': {'class': 'form-inline form-styles'}}) }}
+            {{ form_errors(form) }}
+
+            {% if  letters is  defined %}
+                    <a href="/web/app_dev.php" class="a-btn" title="Home"><img src=" {{ asset('bundles/fkaksilamain/images/btn.jpg') }}"></a>
+            {% endif %}
+
+            <div class="input-group">
+                {{ form_label(form.text) }}
+                {{ form_errors(form.text) }}
+                {{ form_widget(form.text) }}
+            </div>
+
+            <button type="submit" class="btn " >Перевод!</button>
+            {{ form_end(form) }}
+
+            {% if  letters is defined %}
+                <div>
+                    <h3 class="name-answer">Фраза:</h3>
+
+
+
+                    <table class="table table-nonfluid table-border">
+                        <tr>
+                            {% set n = 0 %}
+                    {% for letter in letters %}
+                        {% set n = n + 1  %}
+                        <td id="answer-{{ n  }}">{{ letter }}</td>
+                    {% endfor %}
+                        </tr>
+                    </table>
+                </div>
+                <div>
+                    <h3 class="name-answer">Перевод:</h3>
+
+                    <div class="teacher"></div>
+
+                    {% set n = 0 %}
+                    <div class = 'answer'>
+                        {% for res in result %}
+                            {% set n = n + 1  %}
+                            <span  id="answer-{{ n }}">{{ res }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    <p class="footer">&copy;[Эф] - как сила 2014. Все права защищены.</p>
 {% endblock %}
