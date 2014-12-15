@@ -12,7 +12,7 @@ class DefaultController extends Controller
     public function translateAction(Request $request)
     {
         $phrase = new Phrase();
-        $action = array('action' => $this->generateUrl('translate', array('text' => 10)));
+        $action = array('action' => $this->generateUrl('translate'));
         $form = $this->createForm(new PhraseType(), $phrase, $action);
 
         $form->handleRequest($request);

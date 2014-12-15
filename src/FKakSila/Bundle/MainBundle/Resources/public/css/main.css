@@ -27,11 +27,21 @@ body {
     font-size: 145%;
     font-weight: 600;
 }
+.btn-home {
+    display: inline;
+}
 .btn:hover {
     color: #00CC33;
 }
 .container {
     width: auto;
+}
+.error-msg {
+    clear: both;
+    color: #006600;
+    text-decoration: underline;
+    text-align: center;
+    list-style: none;
 }
 .footer {
     color: #fff;
@@ -83,6 +93,9 @@ input:focus {
     text-transform: uppercase;
     text-align: center;
 }
+.name-answer-translate {
+    clear: both;
+}
 .newton {
     float: left;
     background-image: url('../images/newton.png');
@@ -100,17 +113,21 @@ input:focus {
     font-size: 134%;
     padding-left: 45%;
 }
-.table-nonfluid {
-    width: auto;
-    border: 5px solid #3e7b02;
-    background-color:#CCFFCC;
+.phrase-block {
+    width: 90%;
     color:#006600;
     font-weight: 600;
     margin: auto;
 
 }
-.table-border td {
+.phrase-block li {
+    width: 25px;
+    float: left;
+    text-align: center;
+    list-style: none;
     border: 2px solid #3e7b02;
+    margin-bottom: 10px;
+
 }
 .teacher {
     background-image: url('../images/teacher.png');
@@ -130,7 +147,7 @@ input:focus {
     text-transform: uppercase;
 }
 
-@media screen and (min-width:480px) and (max-width:1200px) {
+@media screen and (min-width:480px) and (max-width:800px) {
     body {
         font-size: 15px;
     }

@@ -26,23 +26,26 @@
              </div>
         {% endif %}
 
-
-
             {{ form_start(form, {'attr': {'class': 'form-inline form-styles'}}) }}
             {{ form_errors(form) }}
 
             {% if  letters is  defined %}
-                    <a href="/web/app_dev.php" class="a-btn" title="Home"><img src=" {{ asset('bundles/fkaksilamain/images/btn.jpg') }}"></a>
+                <div class="btn-home">
+                    <a href="{{ path('translate') }}"  title="Home"><span class="btn">Главная</span></a>
+                </div>
             {% endif %}
 
             <div class="input-group">
                 {{ form_label(form.text) }}
                 {{ form_errors(form.text) }}
-                {{ form_widget(form.text) }}
+                {{ form_widget(form.text, {"attr": {"pattern": "^[a-zA-Z\.\/@ ]{1,255}$", "title":"Допустимые символы: латиница @ / . пробел",
+                     'oninvalid': "setCustomValidity('Поле пустое! Введите данные!')"}
+                } ) }}
             </div>
 
             <button type="submit" class="btn " >Перевод!</button>
             {{ form_end(form) }}
+
 
             {% if  letters is defined %}
                 <div>
@@ -50,18 +53,23 @@
 
 
 
-                    <table class="table table-nonfluid table-border">
-                        <tr>
-                            {% set n = 0 %}
+                    <ul class="phrase-block">
+                        {% set n = 0 %}
                     {% for letter in letters %}
                         {% set n = n + 1  %}
-                        <td id="answer-{{ n  }}">{{ letter }}</td>
+
+                        {% if letter == " " %}
+                            <li class="answer" data-answer-id="{{ n }}">&nbsp;</li>
+                        {% endif %}
+                        {% if letter != " " %}
+                            <li class="answer" data-answer-id="{{ n }}">{{ letter }}</li>
+                        {% endif %}
                     {% endfor %}
-                        </tr>
-                    </table>
+
+                    </ul>
                 </div>
                 <div>
-                    <h3 class="name-answer">Перевод:</h3>
+                    <h3 class="name-answer name-answer-translate">Перевод:</h3>
 
                     <div class="teacher"></div>
 
@@ -69,7 +77,7 @@
                     <div class = 'answer'>
                         {% for res in result %}
                             {% set n = n + 1  %}
-                            <span  id="answer-{{ n }}">{{ res }}</span>
+                            <span  class="answer-{{ n }}">{{ res }}</span>
                         {% endfor %}
                     </div>
                 </div>
