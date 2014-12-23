@@ -19,8 +19,8 @@
                 <h1 class="right-block-h1">Здравствуй!</h1>
                 <div class ="about">
                     <p>Этот сайт  придуман  для  физиков!
-                      Он поможет тебе продиктовать друзьям адрес твоей странички, электронную почту
-                        и разные другие адреса в интернете!</p>
+                      Он поможет тебе продиктовать друзьям адрес странички в интернете, электронную почту
+                        и любые английские слова!</p>
                     <p>Просто введи адрес в поле внизу и нажми на кнопку «перевод»!</p>
                 </div>
              </div>
@@ -44,29 +44,28 @@
             </div>
 
             <button type="submit" class="btn " >Перевод!</button>
+
             {{ form_end(form) }}
 
 
             {% if  letters is defined %}
                 <div>
-                    <h3 class="name-answer">Фраза:</h3>
-
-
+                    <h3 class="name-answer">Фраза (Адрес):</h3>
 
                     <ul class="phrase-block">
-                        {% set n = 0 %}
-                    {% for letter in letters %}
-                        {% set n = n + 1  %}
+                            {% set n = 0 %}
+                        {% for letter in letters %}
+                            {% set n = n + 1  %}
 
-                        {% if letter == " " %}
-                            <li class="answer" data-answer-id="{{ n }}">&nbsp;</li>
-                        {% endif %}
-                        {% if letter != " " %}
-                            <li class="answer" data-answer-id="{{ n }}">{{ letter }}</li>
-                        {% endif %}
-                    {% endfor %}
-
+                            {% if letter == " " %}
+                                <li class="answer" data-answer-id="{{ n }}">&nbsp;</li>
+                            {% endif %}
+                            {% if letter != " " %}
+                                <li class="answer" data-answer-id="{{ n }}">{{ letter }}</li>
+                            {% endif %}
+                        {% endfor %}
                     </ul>
+
                 </div>
                 <div>
                     <h3 class="name-answer name-answer-translate">Перевод:</h3>
@@ -74,7 +73,7 @@
                     <div class="teacher"></div>
 
                     {% set n = 0 %}
-                    <div class = 'answer'>
+                    <div class = 'answer answer-translate'>
                         {% for res in result %}
                             {% set n = n + 1  %}
                             <span  class="answer-{{ n }}">{{ res }}</span>

@@ -19,6 +19,9 @@ body {
     background-color: #FF9900;
     cursor: pointer;
 }
+.answer-translate {
+    padding: 20px;
+}
 .btn {
     background-color:#CCFFCC;
     border: 5px solid #3e7b02;
@@ -26,6 +29,7 @@ body {
     padding: 10px;
     font-size: 145%;
     font-weight: 600;
+    margin: 0px
 }
 .btn-home {
     display: inline;
@@ -52,6 +56,7 @@ body {
 .form-styles {
     clear: both;
     text-align: center;
+    margin: 10px;
 }
 .header {
     width: 55%;
@@ -76,6 +81,11 @@ input:focus {
 }
 .input-group {
     padding: 15px;
+    margin: 10px auto 10px;
+}
+.input-group-btn {
+    font-size: 100%;
+    font-weight: 600;
 }
 .main-block {
     width: 65%;
@@ -114,27 +124,45 @@ input:focus {
     padding-left: 45%;
 }
 .phrase-block {
-    width: 90%;
+    width: auto;
     color:#006600;
     font-weight: 600;
-    margin: auto;
-
+    padding: 0;
+    margin:0;
+    text-align: center;
+    font-size: 0;
 }
 .phrase-block li {
+    display: inline-block;
     width: 25px;
-    float: left;
     text-align: center;
     list-style: none;
-    border: 2px solid #3e7b02;
+    border: 0 solid #3e7b02;
+    border-width: 2px 0 2px 2px;
     margin-bottom: 10px;
-
+    font-size: 18px;
+}
+.phrase-block li:last-child {
+    border-right: 2px solid #3e7b02;
+}
+.phrase-block li:nth-child(3n):nth-last-child(-n+2) ~ li {
+    border: 2px solid #3e7b02;
+    background-color: #3e7b02;
 }
 .teacher {
     background-image: url('../images/teacher.png');
     width: 150px;
     height: 150px;
     float: left;
-    margin: 0 10px 20px 50px;
+    margin: 0 10px 20px 30px;
+}
+.text {
+    text-align: center;
+    color:#006600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+
 }
 .right-block {
     float: right;
@@ -147,6 +175,32 @@ input:focus {
     text-transform: uppercase;
 }
 
+
+@media screen and (min-width:801px) and (max-width:1200px) {
+    .header {
+        width: 70%;
+    }
+    .header-h1 {
+        font-size: 200%;
+    }
+    .newton {
+        float: left;
+        background-image: url('../images/newton.gif');
+        background-size: 230px 230px;
+        background-repeat: no-repeat;
+        width: 230px;
+        height: 230px;
+    }
+    .right-block {
+        display: inline;
+        float: none;
+        width: auto;
+
+    }
+    .right-block-h1 {
+        font-size: 190%;
+    }
+}
 @media screen and (min-width:480px) and (max-width:800px) {
     body {
         font-size: 15px;
@@ -168,7 +222,6 @@ input:focus {
     .newton {
         float: none;
         margin: 0 auto;
-
     }
     .quote-small {
         font-size: 120%;
@@ -184,9 +237,7 @@ input:focus {
     .teacher {
         margin: 0 10px 0 10px;
     }
-
 }
-
 @media screen and (max-width:479px) {
     a
     body {
@@ -196,7 +247,6 @@ input:focus {
         font-size: 80%;
         padding: 5px;
     }
-
     .header {
         width: 80%;
     }
@@ -207,15 +257,14 @@ input:focus {
         font-size: 60%;
         padding: 5px;
     }
-
     .newton {
         float: none;
         margin: 0 auto;
-        background-image: url('../images/newton2.gif');
-        background-repeat:  no-repeat;
+        background-image: url('../images/newton.gif');
+        background-repeat: no-repeat;
+        background-size: 150px 150px;
         width: 150px;
         height: 150px;
-
     }
     .quote-small {
         font-size: 120%;
