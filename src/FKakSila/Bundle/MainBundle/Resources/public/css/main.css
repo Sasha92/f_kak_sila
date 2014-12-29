@@ -16,7 +16,7 @@ body {
     font-size: 100%;
 }
 .answer-hover {
-    background-color: #FF9900;
+    background-color: #FF9900 !important;
     cursor: pointer;
 }
 .answer-translate {
@@ -24,7 +24,7 @@ body {
 }
 .btn {
     background-color:#CCFFCC;
-    border: 5px solid #3e7b02;
+    border: 4px solid #3e7b02;
     color: #006600;
     padding: 10px;
     font-size: 145%;
@@ -71,7 +71,7 @@ body {
 }
 input {
     background-color: #CCFFCC;
-    border: 5px solid #3e7b02;
+    border: 4px solid #3e7b02;
     padding: 10px;
     font-size: 139%;
     font-weight: 600;
@@ -90,7 +90,7 @@ input:focus {
 .main-block {
     width: 65%;
     background-color: #fff;
-    border: 8px solid #3e7b02;
+    border: 5px solid #3e7b02;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
     border-radius: 15px;
@@ -108,7 +108,7 @@ input:focus {
 }
 .newton {
     float: left;
-    background-image: url('../images/newton.png');
+    background-image: url('../images/newton.jpg');
     background-repeat:  no-repeat;
     width: 300px;
     height: 300px;
@@ -137,20 +137,13 @@ input:focus {
     width: 25px;
     text-align: center;
     list-style: none;
-    border: 0 solid #3e7b02;
-    border-width: 2px 0 2px 2px;
-    margin-bottom: 10px;
+    background-color: #CCFFCC;
+    margin: 0 0 10px 1px;
+    padding: 5px;
     font-size: 18px;
 }
-.phrase-block li:last-child {
-    border-right: 2px solid #3e7b02;
-}
-.phrase-block li:nth-child(3n):nth-last-child(-n+2) ~ li {
-    border: 2px solid #3e7b02;
-    background-color: #3e7b02;
-}
 .teacher {
-    background-image: url('../images/teacher.png');
+    background-image: url('../images/teacher.gif');
     width: 150px;
     height: 150px;
     float: left;
@@ -161,7 +154,6 @@ input:focus {
     color:#006600;
     overflow: hidden;
     text-overflow: ellipsis;
-
 
 }
 .right-block {
@@ -185,7 +177,7 @@ input:focus {
     }
     .newton {
         float: left;
-        background-image: url('../images/newton.gif');
+        background-image: url('../images/newton.jpg');
         background-size: 230px 230px;
         background-repeat: no-repeat;
         width: 230px;
@@ -260,7 +252,7 @@ input:focus {
     .newton {
         float: none;
         margin: 0 auto;
-        background-image: url('../images/newton.gif');
+        background-image: url('../images/newton.jpg');
         background-repeat: no-repeat;
         background-size: 150px 150px;
         width: 150px;

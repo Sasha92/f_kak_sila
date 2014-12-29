@@ -38,9 +38,7 @@
             <div class="input-group">
                 {{ form_label(form.text) }}
                 {{ form_errors(form.text) }}
-                {{ form_widget(form.text, {"attr": {"pattern": "^[a-zA-Z\.\/@ ]{1,255}$", "title":"Допустимые символы: латиница @ / . пробел",
-                     'oninvalid': "setCustomValidity('Поле пустое! Введите данные!')"}
-                } ) }}
+                {{ form_widget(form.text, {"attr": {'oninvalid': "setCustomValidity('Поле пустое! Введите данные!')"} } ) }}
             </div>
 
             <button type="submit" class="btn " >Перевод!</button>
