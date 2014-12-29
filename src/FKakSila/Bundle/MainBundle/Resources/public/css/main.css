@@ -149,13 +149,6 @@ input:focus {
     float: left;
     margin: 0 10px 20px 30px;
 }
-.text {
-    text-align: center;
-    color:#006600;
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-}
 .right-block {
     float: right;
     width: 60%;
