@@ -9,15 +9,13 @@ Installation
 1. Clone the example project from GitHub:
 $ git clone https://github.com/Sasha92/f_kak_sila.git
 
-2. Install composer:
+2. Create database.
+
+3. Install composer:
 curl -sS https://getcomposer.org/installer | php
 php composer.phar install
 
-3. Install DoctrineFixturesBundle:
-http://symfony.com/doc/current/bundles/DoctrineFixturesBundle/index.html
-
-4. Update entities and database:
-app/console doctrine:generate:entities "FKakSilaMainBundle"
+4. Update database:
 app/console doctrine:schema:update --force
 
 5. Load data into database:
